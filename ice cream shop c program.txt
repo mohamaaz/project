@@ -1,0 +1,61 @@
+#include<stdio.h>
+void main()
+{
+        int van_count = 100,busc_count = 100,choc_count = 100;
+        int money_made=0;
+        char choice,dummy;
+        while(1==1) //loop forever
+        {
+                printf("-----------------------------\n");
+                printf("Welcome to Our Ice Cream Shop\n");
+                printf("Press V to Buy Vanilla Ice Cream\n");
+                printf("Press C to Buy Chocolate Ice Cream\n");
+                printf("Press B to Buy Butterscotch Ice Cream\n");
+                printf("Press S to shutdown software\n");
+                scanf("%c",&choice);
+                scanf("%c",&dummy);
+                switch(choice)
+                {
+                        case 'v':
+                        case 'V': if(van_count>0)
+                                {
+                                        //ask how much quantity is needed??
+                                        //read quantity in an integer variable
+                                        printf("Vanilla Ice Cream Bought\n");
+                                        money_made += 10; //*with quantity
+                                        van_count--; //*with quantity
+                                }
+                                else
+                                        printf("Vanilla Ice Cream Empty :(\nPlease choose another!\n");
+                                break;
+                        case 'c':
+                        case 'C': if(choc_count>0)
+                                {
+                                        printf("Chocolate Ice Cream Bought\n");
+                                        money_made += 15;
+                                        choc_count--;
+                                }
+                                else
+                                        printf("Chocolate Ice Cream Empty :(\nPlease choose another!\n");
+                                break;
+                        case 'b':
+                        case 'B': if(busc_count>0)
+                                {
+                                        printf("Butterscotch Ice Cream Bought\n");
+                                        money_made += 20;
+                                        busc_count--;
+                                }
+                                else
+                                        printf("Butterscotch Ice Cream Empty :(\nPlease choose another!\n");
+                                break;
+                        case 'S': printf("Shutting Down Software\n");
+                                return;
+                        case '#':      printf("Money Made: %d\n",money_made);
+                                        printf("Vanilla Ice Creams Available: %d\n",van_count);
+                                        printf("Chocolate Ice Creams Available: %d\n",choc_count);
+                                        printf("Butterscotch Ice Creams Available: %d\n",busc_count);
+                                        break;
+                        default: printf("Wrong Input\n");
+                }
+        }
+}
